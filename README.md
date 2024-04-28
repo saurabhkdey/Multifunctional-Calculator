@@ -21,7 +21,7 @@ The Multifunctional Calculator is a comprehensive tool designed to perform a var
 **## Installation**
 
 1) Clone the repo
-git clone [https://github.com/your_username_/Multifunctional-Calculator.git](https://github.com/saurabhkdey/Multifunctional-Calculator.git)
+git clone [https://github.com/saurabhkdey/Multifunctional-Calculator.git](https://github.com/saurabhkdey/Multifunctional-Calculator.git)
 
 2) Open the index.html file in a web browser to run the calculator.
 
