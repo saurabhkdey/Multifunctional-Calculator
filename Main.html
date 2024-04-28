@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Multi-Functional Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="calculator">
+    <div class="tabs">
+        <button class="tab-link" onclick="openTab(event, 'Standard')">Standard</button>
+        <button class="tab-link" onclick="openTab(event, 'Scientific')">Scientific</button>
+        <button class="tab-link" onclick="openTab(event, 'Graph')">Graph</button>
+        <button class="tab-link" onclick="openTab(event, 'Matrix')">Matrix</button>
+        <button class="tab-link" onclick="openTab(event, 'Statistics')">Statistics</button>
+    </div>
+
+    <div id="Standard" class="tab-content">
+        <div id="standard-display" class="display">0</div>
+        <div class="button-row">
+            <button onclick="standardInput('7')">7</button>
+            <button onclick="standardInput('8')">8</button>
+            <button onclick="standardInput('9')">9</button>
+            <button onclick="standardCalculate('/')">÷</button>
+        </div>
+        <div class="button-row">
+            <button onclick="standardInput('4')">4</button>
+            <button onclick="standardInput('5')">5</button>
+            <button onclick="standardInput('6')">6</button>
+            <button onclick="standardCalculate('*')">×</button>
+        </div>
+        <div class="button-row">
+            <button onclick="standardInput('1')">1</button>
+            <button onclick="standardInput('2')">2</button>
+            <button onclick="standardInput('3')">3</button>
+            <button onclick="standardCalculate('-')">-</button>
+        </div>
+        <div class="button-row">
+            <button onclick="standardInput('0')">0</button>
+            <button onclick="standardInput('.')">.</button>
+            <button onclick="standardCalculate('=')">=</button>
+            <button onclick="standardCalculate('+')">+</button>
+        </div>
+        <button onclick="clearDisplay('standard')">Clear</button>
+    </div>
+
+    <div id="Scientific" class="tab-content">
+        <div id="scientific-display" class="display">0</div>
+        <div class="button-row">
+            <button onclick="scientificInput('7')">7</button>
+            <button onclick="scientificInput('8')">8</button>
+            <button onclick="scientificInput('9')">9</button>
+            <button onclick="scientificInput('+')">+</button>
+        </div>
+        <div class="button-row">
+            <button onclick="scientificInput('4')">4</button>
+            <button onclick="scientificInput('5')">5</button>
+            <button onclick="scientificInput('6')">6</button>
+            <button onclick="scientificInput('-')">-</button>
+        </div>
+        <div class="button-row">
+            <button onclick="scientificInput('1')">1</button>
+            <button onclick="scientificInput('2')">2</button>
+            <button onclick="scientificInput('3')">3</button>
+            <button onclick="scientificInput('*')">×</button>
+        </div>
+        <div class="button-row">
+            <button onclick="scientificInput('0')">0</button>
+            <button onclick="scientificInput('.')">.</button>
+            <button onclick="scientificCalculate('=')">=</button>
+            <button onclick="scientificInput('/')">÷</button>
+        </div>
+        <div class="button-row">
+            <button onclick="scientificInput('sin(')">sin(</button>
+            <button onclick="scientificInput('cos(')">cos(</button>
+            <button onclick="scientificInput('tan(')">tan(</button>
+            <button onclick="scientificInput('sqrt(')">√(</button>
+        </div>
+        <div class="button-row">
+            <button onclick="scientificInput('log(')">log(</button>
+            <button onclick="scientificInput('exp(')">exp(</button>
+            <button onclick="scientificInput('pi')">π</button>
+            <button onclick="scientificInput('e')">e</button>
+        </div>
+        <button onclick="clearDisplay('scientific')">Clear</button>
+    </div>
+
+    <div id="Graph" class="tab-content">
+        <input type="text" id="functionInput" placeholder="Enter function, e.g., sin(x)" style="width: 80%;">
+        <button onclick="plotGraph()">Plot Graph</button>
+        <div id="plot" class="plot"></div>
+    </div>
+
+    <div id="Matrix" class="tab-content">
+        <textarea id="matrixA" placeholder="Enter matrix A e.g., [1, 2; 3, 4]"></textarea>
+        <textarea id="matrixB" placeholder="Enter matrix B e.g., [1, 2; 3, 4]"></textarea>
+        <div class="button-row">
+            <button onclick="matrixOperation('add')">Add</button>
+            <button onclick="matrixOperation('subtract')">Subtract</button>
+            <button onclick="matrixOperation('multiply')">Multiply</button>
+        </div>
+        <div class="button-row">
+            <button onclick="matrixOperation('transposeA')">Transpose A</button>
+            <button onclick="matrixOperation('detA')">Det(A)</button>
+            <button onclick="matrixOperation('inverseA')">Inverse A</button>
+        </div>
+        <div id="matrixResult"></div>
+    </div>
+
+    <div id="Statistics" class="tab-content">
+        <textarea id="dataSet" placeholder="Enter data set separated by commas"></textarea>
+        <button onclick="calculateStats()">Calculate Stats</button>
+        <div id="statsResult"></div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

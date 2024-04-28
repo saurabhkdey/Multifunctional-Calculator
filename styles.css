@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center; /* Aligns children (tabs) horizontally in the center */
+    align-items: center;     /* Aligns children vertically in the center */
+    padding: 10px 0;         /* Optional: adds padding above and below the tabs */
+    list-style: none;        /* Removes bullet points from list items if .tabs is a <ul> */
+    margin: 0 auto;          /* Centers the tabs container and removes default margin */
+    background-color: #333;  /* Optional: sets a background color for the tabs bar */
+    width: 100%;             /* Ensures the tabs container fills its parent width */
+    gap: 10px;               /* Adds space between each tab link */
+}
+
+.tab-link {
+    flex-grow: 1;            /* Allows each tab to grow equally filling the container */
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;      /* Ensures text within each tab is centered */
+    border-bottom: 3px solid transparent; /* Highlights the active tab */
+}
+
+.tab-link:hover, .tab-link.active {
+    border-bottom: 3px solid #74ebd5; /* Changes the border color on hover and when active */
+}
+
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.display {
+    width: 96.5%;
+    padding: 10px;
+    text-align: right;
+    background-color: #e1e1e1;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 25%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.plot {
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+}
